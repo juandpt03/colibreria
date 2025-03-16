@@ -1,0 +1,12 @@
+export 'package:colibreria/src/core/utils/utils.dart';
+export 'package:colibreria/src/core/observers/language_observer.dart';
+export 'package:colibreria/src/core/observers/multi_observer.dart';
+export 'package:colibreria/src/core/services/injector/injector_conf.dart';
+export 'package:colibreria/src/core/constants/enviroment.dart';
+export 'package:colibreria/src/core/utils/env_loader.dart';
+export 'package:colibreria/src/core/config/theme/app_theme.dart';
+export 'package:colibreria/src/core/error/app_exeption.dart';
+export 'package:colibreria/src/core/extensions/custom_color_scheme.dart';
+export 'package:colibreria/src/core/extensions/assets_from_string.dart';
+export 'package:colibreria/src/core/services/image_manager/image_manager.dart';
+export 'package:colibreria/src/core/config/intl/l10n.dart';
