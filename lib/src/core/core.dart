@@ -10,3 +10,6 @@ export 'package:colibreria/src/core/extensions/custom_color_scheme.dart';
 export 'package:colibreria/src/core/extensions/assets_from_string.dart';
 export 'package:colibreria/src/core/services/image_manager/image_manager.dart';
 export 'package:colibreria/src/core/config/intl/l10n.dart';
+export 'package:colibreria/src/core/router/app_route_path.dart';
+export 'package:colibreria/src/core/services/injector/injector.dart';
+export 'package:colibreria/src/core/router/app_router.dart';

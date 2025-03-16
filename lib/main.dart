@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'package:colibreria/src/core/core.dart';
-
-import 'package:colibreria/src/core/router/app_route_conf.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 
 void main() async {
@@ -31,7 +28,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final locale = context.watch<LanguageBloc>().state;
     return MaterialApp.router(
-      routerConfig: AppRouteConf().router,
+      routerConfig: DI.sl<AppRouter>().router,
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

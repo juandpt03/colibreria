@@ -1,2 +1,1 @@
-export '../../../features/auth/di/auth_depedency.dart';
-export '../../router/app_route_conf.dart';
+export 'package:colibreria/src/features/auth/di/auth_depedency.dart';

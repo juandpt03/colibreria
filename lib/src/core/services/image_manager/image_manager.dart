@@ -9,7 +9,7 @@ class ImageManager {
 
 class AppIcons {
   const AppIcons();
-
+  String get icon => ImageManager.path('icons/icon.svg');
   String get backArrow => ImageManager.path('icons/back-arrow.svg');
   String get rightArrow => ImageManager.path('icons/right-arrow.svg');
   String get delete => ImageManager.path('icons/delete.svg');

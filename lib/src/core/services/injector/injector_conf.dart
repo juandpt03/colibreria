@@ -3,8 +3,6 @@ import 'package:colibreria/src/core/core.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'injector.dart';
-
 class DI {
   DI._internal();
   static final sl = GetIt.I;
@@ -13,7 +11,7 @@ class DI {
     await _setupHydratedStorage();
     await EnvLoader().loadEnv('.env');
     sl.registerLazySingleton(() => EnvLoader());
-    sl.registerLazySingleton(() => AppRouteConf());
+    sl.registerLazySingleton(() => AppRouter());
     sl.registerLazySingleton(() => Environment());
     sl.registerLazySingleton(() => AppTheme());
     AuthDepedency.init();
