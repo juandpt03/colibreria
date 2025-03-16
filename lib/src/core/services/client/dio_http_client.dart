@@ -1,3 +1,5 @@
+import 'package:colibreria/src/core/config/intl/l10n.dart';
+import 'package:colibreria/src/core/error/app_exeption.dart';
 import 'package:colibreria/src/core/services/client/http_client.dart';
 import 'package:dio/dio.dart';
 
@@ -27,8 +29,12 @@ class DioHttpClient implements HttpClient {
           (key, value) => MapEntry(key, value.first),
         ),
       );
-    } on DioException {
-      rethrow;
+    } on DioException catch (e) {
+      throw AppException(
+        error: true,
+        message: e.message ?? AppLocalizations.current.anUnknownErrorOccurred,
+        exception: e,
+      );
     }
   }
 }

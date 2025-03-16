@@ -1,6 +1,6 @@
 import 'package:colibreria/src/core/config/intl/l10n.dart';
 
-class AppException<T extends Exception> implements Exception {
+class AppException implements Exception {
   final String message;
   final bool error;
   final Exception exception;
@@ -11,7 +11,9 @@ class AppException<T extends Exception> implements Exception {
     required this.exception,
   });
 
-  factory AppException.fromException(T exception) {
+  factory AppException.fromException(dynamic exception) {
+    if (exception is AppException) return exception;
+
     return AppException(
       message: exception.toString(),
       error: true,
