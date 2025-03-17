@@ -101,8 +101,9 @@ class _BookCover extends StatelessWidget {
             ),
         imageUrl: book.image,
         fit: BoxFit.contain,
-        placeholder: (context, url) => const CustomLoading(),
         errorWidget: (context, url, error) => const Icon(Icons.error),
+        fadeInDuration: Duration.zero,
+        placeholder: (context, url) => CustomLoading(),
       ),
     );
   }
