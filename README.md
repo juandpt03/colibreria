@@ -23,6 +23,8 @@ Colibreria es una aplicación móvil desarrollada en Flutter para la Biblioteca 
 - ✅ **Memoria Caché** - Almacenamiento de las últimas 5 búsquedas para consultas más rápidas
 - ✅ **Tema Claro/Oscuro** - Soporte para cambio automático de tema basado en la configuración del sistema
 - ✅ **Multilingüe** - Soporte para internacionalización
+- ✅ **Compartir Libros** - Funcionalidad para compartir libros con otros usuarios
+- ✅ **Vista Previa de Capítulos** - Acceso a algunos capítulos de libros para su lectura
 - ✅ **Manejo Óptimo de Errores** - Sistema robusto para capturar y gestionar errores, mejorando la experiencia del usuario con mensajes claros
 - ✅ **Pruebas Unitarias**
 
@@ -76,12 +78,6 @@ Colibreria es una aplicación móvil desarrollada en Flutter para la Biblioteca 
     <img src="assets/images/screenshots/arquitectura.png" width="800" />
 </p>
 
-La arquitectura sigue los principios de Clean Architecture, dividida en capas:
-
-- **Presentación**: UI, Widgets, Screens y BLoCs
-- **Dominio**: Casos de Uso, Entidades y Repositorios Abstractos
-- **Datos**: Implementaciones de Repositorios, Fuentes de Datos y Modelos
-
 ### 🛠️ Tecnologías Utilizadas
 
 - **Flutter** - Framework de UI multiplataforma
@@ -127,6 +123,8 @@ Colibreria is a mobile application developed in Flutter for the Antioquia Librar
 - ✅ **Dark/Light Theme** - Support for automatic theme switching based on system settings
 - ✅ **Multilingual** - Support for internationalization
 - ✅ **Optimal Error Handling** - Robust system to capture and manage errors, improving the user experience with clear messages
+- ✅ **Share Books** - Functionality to share book details with other users
+- ✅ **Chapter Preview** - Access to some book chapters for reading
 - ✅ **Unit Tests**
 
 ### 📸 Screenshots
@@ -180,12 +178,6 @@ Colibreria is a mobile application developed in Flutter for the Antioquia Librar
 </p>
 
 The architecture follows Clean Architecture principles, divided into layers:
-
-### 📐 Mobile Architecture
-
-- **Presentation**: UI, Widgets, screens, and BLoCs
-- **Domain**: Use Cases, Entities, and Abstract Repositories
-- **Data**: Repository implementations, Data Sources, and Models
 
 ### 🛠️ Technologies Used
 
