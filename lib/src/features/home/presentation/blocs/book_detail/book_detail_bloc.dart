@@ -12,6 +12,9 @@ class BookDetailBloc extends Bloc<BookDetailEvent, BookDetailState> {
   BookDetailBloc({required BooksUseCases booksUseCases})
     : _booksUseCases = booksUseCases,
       super(BookLoading()) {
+    _eventHandlers();
+  }
+  void _eventHandlers() {
     on<FetchBookDetail>(_onFetchBookDetail);
   }
 

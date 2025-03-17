@@ -32,6 +32,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "buyNow": MessageLookupByLibrary.simpleMessage("Buy Now"),
     "chapter": MessageLookupByLibrary.simpleMessage("Chapter"),
     "chapters": MessageLookupByLibrary.simpleMessage("Chapters"),
+    "checkItOut": MessageLookupByLibrary.simpleMessage("Check it out"),
+    "checkOutThisBook": MessageLookupByLibrary.simpleMessage(
+      "Check out this book:",
+    ),
     "couldNotOpenTheUrl": MessageLookupByLibrary.simpleMessage(
       "Could not open the URL:",
     ),
@@ -39,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "errorOpeningTheUrl": MessageLookupByLibrary.simpleMessage(
       "Error opening the URL:",
+    ),
+    "errorTryingToShareTheBook": MessageLookupByLibrary.simpleMessage(
+      "Error trying to share the book:",
     ),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
     "horror": MessageLookupByLibrary.simpleMessage("Horror"),

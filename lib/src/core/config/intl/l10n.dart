@@ -314,6 +314,31 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Check it out`
+  String get checkItOut {
+    return Intl.message('Check it out', name: 'checkItOut', desc: '', args: []);
+  }
+
+  /// `Check out this book:`
+  String get checkOutThisBook {
+    return Intl.message(
+      'Check out this book:',
+      name: 'checkOutThisBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error trying to share the book:`
+  String get errorTryingToShareTheBook {
+    return Intl.message(
+      'Error trying to share the book:',
+      name: 'errorTryingToShareTheBook',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

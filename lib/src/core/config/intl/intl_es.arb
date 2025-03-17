@@ -35,5 +35,8 @@
   "noChaptersAvailableForThisBook": "No hay capítulos disponibles para este libro",
   "bookDetails": "Detalles del libro",
   "errorOpeningTheUrl": "Error al abrir la URL:",
-  "couldNotOpenTheUrl": "No se pudo abrir la URL:"
+  "couldNotOpenTheUrl": "No se pudo abrir la URL:",
+  "checkItOut": "Échale un vistazo",
+  "checkOutThisBook": "Mira este libro:",
+  "errorTryingToShareTheBook": "Error al intentar compartir el libro:"
 }

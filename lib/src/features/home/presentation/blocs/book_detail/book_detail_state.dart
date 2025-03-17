@@ -38,3 +38,11 @@ final class BookError extends BookDetailState {
   @override
   List<Object> get props => [error];
 }
+
+extension BookDetailStateX on BookDetailState {
+  BookDetail? get book => switch (this) {
+    BookSuccess() => (this as BookSuccess).book,
+    BookError() => null,
+    BookLoading() => null,
+  };
+}

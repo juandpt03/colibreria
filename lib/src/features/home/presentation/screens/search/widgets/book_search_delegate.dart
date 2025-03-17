@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BookSearchDelegate extends SearchDelegate {
   final SearchBooksBloc searchBloc;
+  String? _lastSearchedQuery;
 
   BookSearchDelegate({required this.searchBloc});
 
@@ -16,6 +17,7 @@ class BookSearchDelegate extends SearchDelegate {
         icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
+          _lastSearchedQuery = null;
           showSuggestions(context);
         },
       ),
@@ -34,12 +36,17 @@ class BookSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
+    if (query.isNotEmpty && query != _lastSearchedQuery) {
+      _lastSearchedQuery = query;
+      searchBloc.searchBooks(query);
+    }
     return _SearchContent(searchBloc: searchBloc, query: query);
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    if (query.isNotEmpty) {
+    if (query.isNotEmpty && query != _lastSearchedQuery) {
+      _lastSearchedQuery = query;
       searchBloc.searchBooks(query);
     }
     return _SearchContent(
@@ -58,7 +65,6 @@ class _SearchContent extends StatelessWidget {
   final SearchBooksBloc searchBloc;
   final String query;
   final void Function(String)? onSearchSelected;
-
   const _SearchContent({
     required this.searchBloc,
     required this.query,

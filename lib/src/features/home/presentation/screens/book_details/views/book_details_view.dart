@@ -17,7 +17,12 @@ class BookDetailsView extends StatelessWidget {
       appBar: CustomAppBar(
         title: AppLocalizations.of(context).bookDetails,
         actions: [
-          IconButton(icon: const Icon(Icons.share_outlined), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.share_outlined),
+            onPressed:
+                () =>
+                    ShareHandler.shareBook(context: context, book: state.book),
+          ),
           IconButton(icon: const Icon(Icons.bookmark_border), onPressed: () {}),
         ],
       ),

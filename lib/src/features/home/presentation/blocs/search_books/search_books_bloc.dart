@@ -17,11 +17,11 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
   }) : _booksUseCases = booksUseCases,
        _debouncer = debouncer,
        super(SearchBooksLoading()) {
-    _handlers();
+    _eventHandlers();
   }
   //Handlers for events
 
-  void _handlers() {
+  void _eventHandlers() {
     on<SearchBooks>(_onSearchBooks);
     on<LoadMoreSearchResults>(_onLoadMoreSearchResults);
     on<ClearSearch>(_onClearSearch);
