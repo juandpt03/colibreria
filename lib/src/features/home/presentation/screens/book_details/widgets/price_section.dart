@@ -37,7 +37,11 @@ class PriceSection extends StatelessWidget {
                   ),
                   const Spacer(),
                   CustomElevatedButton(
-                    onPressed: () {},
+                    onPressed:
+                        () => UrlLauncherHandler.launchUrl(
+                          context: context,
+                          url: book.url,
+                        ),
                     text: AppLocalizations.of(context).buyNow,
                     padding: const EdgeInsets.symmetric(
                       horizontal: Gaps.paddingLarge,

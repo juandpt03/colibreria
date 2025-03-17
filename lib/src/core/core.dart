@@ -18,3 +18,4 @@ export 'package:colibreria/src/core/router/app_router.dart';
 export 'package:colibreria/src/core/functional/either.dart';
 export 'package:colibreria/src/core/services/client/http_client.dart';
 export 'package:colibreria/src/core/services/client/dio_http_client.dart';
+export 'package:colibreria/src/core/utils/url_launcher_handler.dart';

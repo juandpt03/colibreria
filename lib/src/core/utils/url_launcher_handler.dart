@@ -8,11 +8,11 @@ import 'package:url_launcher/url_launcher.dart' as url_launcher;
 class UrlLauncherHandler {
   static Future<void> launchUrl({
     required BuildContext context,
-    required String urlString,
+    required String url,
     LaunchMode mode = LaunchMode.platformDefault,
   }) async {
     try {
-      final Uri uri = Uri.parse(urlString);
+      final Uri uri = Uri.parse(url);
       final bool launched = await url_launcher.launchUrl(uri, mode: mode);
 
       if (!launched) {
@@ -20,7 +20,7 @@ class UrlLauncherHandler {
           ActionHandler.onException(
             context: context,
             exception: AppException.fromMessage(
-              '${AppLocalizations.of(context).couldNotOpenTheUrl}$urlString',
+              '${AppLocalizations.of(context).couldNotOpenTheUrl} $url',
             ),
           );
         }
@@ -37,9 +37,9 @@ class UrlLauncherHandler {
     }
   }
 
-  static Future<bool> canLaunchUrlSafely(String urlString) async {
+  static Future<bool> canLaunchUrlSafely(String url) async {
     try {
-      final Uri uri = Uri.parse(urlString);
+      final Uri uri = Uri.parse(url);
       return await url_launcher.canLaunchUrl(uri);
     } catch (_) {
       return false;

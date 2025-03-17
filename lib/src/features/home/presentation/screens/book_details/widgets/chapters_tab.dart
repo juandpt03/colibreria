@@ -95,61 +95,66 @@ class _SectionItem extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
     final textStyle = Theme.of(context).textTheme;
 
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: Gaps.medium),
-      padding: const EdgeInsets.all(Gaps.medium),
-      decoration: BoxDecoration(
-        color: colors.surface,
-        borderRadius: BorderRadius.circular(Gaps.radiusMedium),
-        border: Border.all(color: colors.outlineVariant.withValues(alpha: 0.3)),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 34,
-            height: 34,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: colors.surfaceContainerHighest,
-              borderRadius: BorderRadius.circular(Gaps.radiusSmall),
-            ),
-            child: Text(
-              number,
-              style: textStyle.titleSmall?.copyWith(
-                fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () => UrlLauncherHandler.launchUrl(context: context, url: url),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: Gaps.medium),
+        padding: const EdgeInsets.all(Gaps.medium),
+        decoration: BoxDecoration(
+          color: colors.surface,
+          borderRadius: BorderRadius.circular(Gaps.radiusMedium),
+          border: Border.all(
+            color: colors.outlineVariant.withValues(alpha: 0.3),
+          ),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 34,
+              height: 34,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: colors.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(Gaps.radiusSmall),
+              ),
+              child: Text(
+                number,
+                style: textStyle.titleSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          const GapX.medium(),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: textStyle.titleSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
+            const GapX.medium(),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: textStyle.titleSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  subtitle,
-                  style: textStyle.bodySmall?.copyWith(
-                    color: colors.onSurfaceVariant,
+                  Text(
+                    subtitle,
+                    style: textStyle.bodySmall?.copyWith(
+                      color: colors.onSurfaceVariant,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          if (duration.isNotEmpty)
-            Text(
-              duration,
-              style: textStyle.bodySmall?.copyWith(color: colors.primary),
-            ),
-          if (isLocked)
-            Icon(Icons.lock_outline, color: colors.onSurfaceVariant)
-          else
-            Icon(Icons.play_circle_filled, color: colors.primary),
-        ],
+            if (duration.isNotEmpty)
+              Text(
+                duration,
+                style: textStyle.bodySmall?.copyWith(color: colors.primary),
+              ),
+            if (isLocked)
+              Icon(Icons.lock_outline, color: colors.onSurfaceVariant)
+            else
+              Icon(Icons.play_circle_filled, color: colors.primary),
+          ],
+        ),
       ),
     );
   }
