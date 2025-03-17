@@ -1,6 +1,6 @@
 import 'package:colibreria/src/core/core.dart';
 import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
-import 'package:colibreria/src/features/home/presentation/screens/searh/widgets/recent_search_list.dart';
+import 'package:colibreria/src/features/home/presentation/screens/search/widgets/recent_search_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

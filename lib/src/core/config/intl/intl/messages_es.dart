@@ -22,14 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "aboutBook": MessageLookupByLibrary.simpleMessage("Acerca de"),
     "all": MessageLookupByLibrary.simpleMessage("Todos"),
     "anUnknownErrorOccurred": MessageLookupByLibrary.simpleMessage(
       "Ha ocurrido un error desconocido",
     ),
     "biography": MessageLookupByLibrary.simpleMessage("Biografía"),
+    "bookDetails": MessageLookupByLibrary.simpleMessage("Detalles del libro"),
+    "buyNow": MessageLookupByLibrary.simpleMessage("Comprar ahora"),
+    "chapter": MessageLookupByLibrary.simpleMessage("Capítulo"),
+    "chapters": MessageLookupByLibrary.simpleMessage("Capítulos"),
+    "description": MessageLookupByLibrary.simpleMessage("Descripción"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "found": MessageLookupByLibrary.simpleMessage("Encontrados"),
     "horror": MessageLookupByLibrary.simpleMessage("Terror"),
+    "isbn13": MessageLookupByLibrary.simpleMessage("ISBN-13"),
     "isbnNotAvailable": MessageLookupByLibrary.simpleMessage(
       "ISBN no disponible",
     ),
@@ -41,25 +48,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "noBooksFoundFor": MessageLookupByLibrary.simpleMessage(
       "No se encontraron libros para",
     ),
+    "noChaptersAvailableForThisBook": MessageLookupByLibrary.simpleMessage(
+      "No hay capítulos disponibles para este libro",
+    ),
     "noDescriptionAvailable": MessageLookupByLibrary.simpleMessage(
       "Descripción no disponible",
     ),
     "noRecentSearches": MessageLookupByLibrary.simpleMessage(
       "No hay búsquedas recientes",
     ),
+    "noReviewsYet": MessageLookupByLibrary.simpleMessage("Aún no hay reseñas"),
     "noTitleAvailable": MessageLookupByLibrary.simpleMessage(
       "Título no disponible",
     ),
+    "pages": MessageLookupByLibrary.simpleMessage("Páginas"),
+    "price": MessageLookupByLibrary.simpleMessage("Precio"),
     "priceNotAvailable": MessageLookupByLibrary.simpleMessage(
       "Precio no disponible",
     ),
-    "recentSearch": MessageLookupByLibrary.simpleMessage("Búsqueda reciente"),
+    "publisher": MessageLookupByLibrary.simpleMessage("Editorial"),
+    "recentSearch": MessageLookupByLibrary.simpleMessage("Búsquedas reciente"),
     "resultsFor": MessageLookupByLibrary.simpleMessage("resultados para"),
     "retry": MessageLookupByLibrary.simpleMessage("Reintentar"),
+    "reviews": MessageLookupByLibrary.simpleMessage("Reseñas"),
     "success": MessageLookupByLibrary.simpleMessage("Éxito"),
     "travel": MessageLookupByLibrary.simpleMessage("Viajes"),
     "unexpectedNullValue": MessageLookupByLibrary.simpleMessage(
       "Valor nulo inesperado",
     ),
+    "year": MessageLookupByLibrary.simpleMessage("Año"),
   };
 }

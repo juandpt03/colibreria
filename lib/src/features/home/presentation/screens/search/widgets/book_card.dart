@@ -1,26 +1,33 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:colibreria/src/core/config/intl/l10n.dart';
+import 'package:colibreria/src/core/core.dart';
 import 'package:colibreria/src/features/home/domain/domain.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BookCard extends StatelessWidget {
   final Book book;
-  final Color color;
 
-  const BookCard({super.key, required this.book, required this.color});
+  const BookCard({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: Gaps.small),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _BookCover(color: color, book: book),
-          const GapX.small(),
-          Expanded(child: _BookInfo(book: book)),
-        ],
+    return InkWell(
+      onTap:
+          () => context.pushNamed(
+            AppRoute.bookDetail.name,
+            queryParameters: {'isbn13': book.isbn13},
+          ),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: Gaps.small),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _BookCover(book: book),
+            const GapX.small(),
+            Expanded(child: _BookInfo(book: book)),
+          ],
+        ),
       ),
     );
   }
@@ -79,31 +86,38 @@ class _BookInfo extends StatelessWidget {
 }
 
 class _BookCover extends StatelessWidget {
-  final Color color;
   final Book book;
 
-  const _BookCover({required this.color, required this.book});
+  const _BookCover({required this.book});
 
   @override
   Widget build(BuildContext context) {
+    final color =
+        Colors.primaries[book.isbn13.hashCode % 10 % Colors.primaries.length];
     final Size size = MediaQuery.sizeOf(context);
-    return SizedBox(
-      width: size.width * 0.3,
-      height: size.height * 0.2,
-      child: CachedNetworkImage(
-        imageBuilder:
-            (context, imageProvider) => Container(
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(8),
-                image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+    return Hero(
+      tag: book.isbn13,
+      child: SizedBox(
+        width: size.width * 0.3,
+        height: size.height * 0.2,
+        child: CachedNetworkImage(
+          imageBuilder:
+              (context, imageProvider) => Container(
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
-        imageUrl: book.image,
-        fit: BoxFit.contain,
-        errorWidget: (context, url, error) => const Icon(Icons.error),
-        fadeInDuration: Duration.zero,
-        placeholder: (context, url) => CustomLoading(),
+          imageUrl: book.image,
+          fit: BoxFit.contain,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
+          fadeInDuration: Duration.zero,
+          placeholder: (context, url) => CustomLoading(),
+        ),
       ),
     );
   }

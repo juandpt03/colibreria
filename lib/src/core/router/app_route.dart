@@ -1,7 +1,7 @@
 enum AppRoute {
   splash(path: '/splash'),
   home(path: '/home'),
-  book(path: '/book', parent: home);
+  bookDetail(path: '/book-detail', parent: AppRoute.home);
 
   const AppRoute({required this.path, this.parent});
 

@@ -5,7 +5,7 @@ import 'package:colibreria/src/core/core.dart';
 import 'package:colibreria/src/features/home/presentation/blocs/blocs.dart';
 import 'package:colibreria/src/features/home/presentation/screens/home/views/new_books_result_view.dart';
 import 'package:colibreria/src/features/home/presentation/screens/home/widgets/widgets.dart';
-import 'package:colibreria/src/features/home/presentation/screens/searh/widgets/widgets.dart';
+import 'package:colibreria/src/features/home/presentation/screens/search/widgets/widgets.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 
 class HomeScreen extends StatelessWidget {

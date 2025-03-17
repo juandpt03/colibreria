@@ -49,9 +49,9 @@ class _BooksGrid extends StatelessWidget {
         ),
         itemCount: books.length,
         itemBuilder: (context, index) {
-          final color = Colors.primaries[index % Colors.primaries.length];
+          final book = books[index];
 
-          return BookItem(book: books[index], color: color);
+          return BookItem(book: book);
         },
       ),
     );

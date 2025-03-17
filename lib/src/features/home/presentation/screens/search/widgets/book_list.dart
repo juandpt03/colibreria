@@ -1,6 +1,6 @@
 import 'package:colibreria/src/core/config/intl/l10n.dart';
 import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
-import 'package:colibreria/src/features/home/presentation/screens/searh/widgets/widgets.dart';
+import 'package:colibreria/src/features/home/presentation/screens/search/widgets/widgets.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -71,8 +71,8 @@ class BookListState extends State<BookList> {
             itemCount: books.length,
             itemBuilder: (context, index) {
               final book = books[index];
-              final color = Colors.primaries[index % Colors.primaries.length];
-              return BookCard(book: book, color: color);
+
+              return BookCard(book: book);
             },
           ),
         ],

@@ -19,5 +19,19 @@
   "all": "All",
   "travel": "Travel",
   "biography": "Biography",
-  "horror": "Horror"
+  "horror": "Horror",
+  "buyNow": "Buy Now",
+  "price": "Price",
+  "noReviewsYet": "No reviews yet",
+  "aboutBook": "About Book",
+  "chapters": "Chapters",
+  "reviews": "Reviews",
+  "publisher": "Publisher",
+  "year": "Year",
+  "pages": "Pages",
+  "isbn13": "ISBN-13",
+  "description": "Description",
+  "chapter": "Chapter",
+  "noChaptersAvailableForThisBook": "No chapters available for this book",
+  "bookDetails": "Book Details"
 }

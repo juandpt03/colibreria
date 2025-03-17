@@ -1,5 +1,5 @@
 import 'package:colibreria/src/core/core.dart';
-import 'package:colibreria/src/features/home/presentation/screens/searh/widgets/recent_search_items.dart';
+import 'package:colibreria/src/features/home/presentation/screens/search/widgets/recent_search_items.dart';
 import 'package:flutter/material.dart';
 
 class RecentSearchList extends StatelessWidget {

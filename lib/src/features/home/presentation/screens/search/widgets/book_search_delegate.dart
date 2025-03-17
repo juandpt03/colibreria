@@ -1,5 +1,5 @@
 import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
-import 'package:colibreria/src/features/home/presentation/screens/searh/views/views.dart';
+import 'package:colibreria/src/features/home/presentation/screens/search/views/views.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,9 +34,6 @@ class BookSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    if (query.isNotEmpty) {
-      searchBloc.searchBooks(query);
-    }
     return _SearchContent(searchBloc: searchBloc, query: query);
   }
 

@@ -209,6 +209,91 @@ class AppLocalizations {
   String get horror {
     return Intl.message('Horror', name: 'horror', desc: '', args: []);
   }
+
+  /// `Buy Now`
+  String get buyNow {
+    return Intl.message('Buy Now', name: 'buyNow', desc: '', args: []);
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `No reviews yet`
+  String get noReviewsYet {
+    return Intl.message(
+      'No reviews yet',
+      name: 'noReviewsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Book`
+  String get aboutBook {
+    return Intl.message('About Book', name: 'aboutBook', desc: '', args: []);
+  }
+
+  /// `Chapters`
+  String get chapters {
+    return Intl.message('Chapters', name: 'chapters', desc: '', args: []);
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
+  }
+
+  /// `Publisher`
+  String get publisher {
+    return Intl.message('Publisher', name: 'publisher', desc: '', args: []);
+  }
+
+  /// `Year`
+  String get year {
+    return Intl.message('Year', name: 'year', desc: '', args: []);
+  }
+
+  /// `Pages`
+  String get pages {
+    return Intl.message('Pages', name: 'pages', desc: '', args: []);
+  }
+
+  /// `ISBN-13`
+  String get isbn13 {
+    return Intl.message('ISBN-13', name: 'isbn13', desc: '', args: []);
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Chapter`
+  String get chapter {
+    return Intl.message('Chapter', name: 'chapter', desc: '', args: []);
+  }
+
+  /// `No chapters available for this book`
+  String get noChaptersAvailableForThisBook {
+    return Intl.message(
+      'No chapters available for this book',
+      name: 'noChaptersAvailableForThisBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book Details`
+  String get bookDetails {
+    return Intl.message(
+      'Book Details',
+      name: 'bookDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

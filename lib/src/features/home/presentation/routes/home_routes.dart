@@ -15,6 +15,18 @@ class HomeRoutes {
               state: state,
             ),
       ),
+
+      GoRoute(
+        path: AppRoute.bookDetail.path,
+        name: AppRoute.bookDetail.name,
+        pageBuilder: (context, state) {
+          final isbn13 = state.uri.queryParameters['isbn13'] ?? '';
+          return TransitionManager().slideTransition(
+            child: BookDetailsScreen(isbn13: isbn13),
+            state: state,
+          );
+        },
+      ),
     ];
   }
 }
