@@ -16,7 +16,9 @@ class DI {
     setupClient();
     sl.registerLazySingleton(() => AppRouter());
     sl.registerLazySingleton(() => AppTheme());
+    sl.registerLazySingleton(() => Debouncer());
     AuthDepedency.init();
+    HomeDependency.init();
   }
 
   static Future<void> _setupHydratedStorage() async {
@@ -37,14 +39,9 @@ class DI {
             contentType: 'application/json',
           ),
         )
-        ..interceptors.addAll([
-          LogInterceptor(
-            request: true,
-            responseBody: true,
-            requestBody: true,
-            error: true,
-          ),
-        ]),
+        ..interceptors.add(
+          LogInterceptor(request: true, requestBody: true, error: true),
+        ),
     );
 
     sl.registerLazySingleton<HttpClient>(() => DioHttpClient(dio: sl.get()));

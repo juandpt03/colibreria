@@ -89,6 +89,91 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `No title available`
+  String get noTitleAvailable {
+    return Intl.message(
+      'No title available',
+      name: 'noTitleAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No description available`
+  String get noDescriptionAvailable {
+    return Intl.message(
+      'No description available',
+      name: 'noDescriptionAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price not available`
+  String get priceNotAvailable {
+    return Intl.message(
+      'Price not available',
+      name: 'priceNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ISBN not available`
+  String get isbnNotAvailable {
+    return Intl.message(
+      'ISBN not available',
+      name: 'isbnNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No books found for`
+  String get noBooksFoundFor {
+    return Intl.message(
+      'No books found for',
+      name: 'noBooksFoundFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message('Retry', name: 'retry', desc: '', args: []);
+  }
+
+  /// `Recent Search`
+  String get recentSearch {
+    return Intl.message(
+      'Recent Search',
+      name: 'recentSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Found`
+  String get found {
+    return Intl.message('Found', name: 'found', desc: '', args: []);
+  }
+
+  /// `results for`
+  String get resultsFor {
+    return Intl.message('results for', name: 'resultsFor', desc: '', args: []);
+  }
+
+  /// `No recent searches`
+  String get noRecentSearches {
+    return Intl.message(
+      'No recent searches',
+      name: 'noRecentSearches',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

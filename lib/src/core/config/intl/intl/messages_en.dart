@@ -26,7 +26,29 @@ class MessageLookup extends MessageLookupByLibrary {
       "An unknown error occurred",
     ),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "found": MessageLookupByLibrary.simpleMessage("Found"),
+    "isbnNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "ISBN not available",
+    ),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+    "noBooksFoundFor": MessageLookupByLibrary.simpleMessage(
+      "No books found for",
+    ),
+    "noDescriptionAvailable": MessageLookupByLibrary.simpleMessage(
+      "No description available",
+    ),
+    "noRecentSearches": MessageLookupByLibrary.simpleMessage(
+      "No recent searches",
+    ),
+    "noTitleAvailable": MessageLookupByLibrary.simpleMessage(
+      "No title available",
+    ),
+    "priceNotAvailable": MessageLookupByLibrary.simpleMessage(
+      "Price not available",
+    ),
+    "recentSearch": MessageLookupByLibrary.simpleMessage("Recent Search"),
+    "resultsFor": MessageLookupByLibrary.simpleMessage("results for"),
+    "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "unexpectedNullValue": MessageLookupByLibrary.simpleMessage(
       "Unexpected null value",

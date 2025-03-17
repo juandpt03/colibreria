@@ -1,3 +1,4 @@
+import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,6 +13,11 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider<LanguageBloc>(create: (context) => LanguageBloc()),
+        BlocProvider<SearchBooksBloc>(
+          create:
+              (context) =>
+                  SearchBooksBloc(booksUseCases: DI.sl(), debouncer: DI.sl()),
+        ),
       ],
       child: MultiObserver(
         observers: [(context, child) => LanguageObserver(child: child)],

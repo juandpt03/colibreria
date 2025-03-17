@@ -3,5 +3,15 @@
   "success": "Success",
   "error": "Error",
   "anUnknownErrorOccurred": "An unknown error occurred",
-  "unexpectedNullValue": "Unexpected null value"
+  "unexpectedNullValue": "Unexpected null value",
+  "noTitleAvailable": "No title available",
+  "noDescriptionAvailable": "No description available",
+  "priceNotAvailable": "Price not available",
+  "isbnNotAvailable": "ISBN not available",
+  "noBooksFoundFor": "No books found for",
+  "retry": "Retry",
+  "recentSearch": "Recent Search",
+  "found": "Found",
+  "resultsFor": "results for",
+  "noRecentSearches": "No recent searches"
 }

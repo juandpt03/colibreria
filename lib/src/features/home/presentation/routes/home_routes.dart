@@ -1,6 +1,6 @@
+import 'package:colibreria/src/features/home/presentation/screens/screens.dart';
 import 'package:go_router/go_router.dart';
 import 'package:colibreria/src/core/core.dart';
-import 'package:colibreria/src/features/home/presentation/screens/home/home_screen.dart';
 
 class HomeRoutes {
   HomeRoutes._();

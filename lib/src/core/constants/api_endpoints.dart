@@ -1,7 +1,7 @@
 class ApiEndpoints {
   // Search books
   static String searchBooks(String query, {int page = 1}) =>
-      '/search/$query/$page';
+      '/search/${query.replaceAll(' ', '')}/$page';
 
   // New releases
   static const String newReleases = '/new';
