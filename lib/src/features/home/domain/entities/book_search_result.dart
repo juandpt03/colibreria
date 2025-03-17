@@ -1,6 +1,7 @@
 import 'package:colibreria/src/features/home/domain/entities/book.dart';
 import 'package:equatable/equatable.dart';
 
+/// Represents search results with pagination data
 class BookSearchResult extends Equatable {
   final int total;
   final int page;
@@ -15,6 +16,7 @@ class BookSearchResult extends Equatable {
   @override
   List<Object?> get props => [total, page, books];
 
+  /// Creates an empty search result with no books
   factory BookSearchResult.empty() =>
       const BookSearchResult(total: 0, page: 1, books: []);
 

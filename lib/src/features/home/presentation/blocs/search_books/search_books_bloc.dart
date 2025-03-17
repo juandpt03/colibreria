@@ -7,6 +7,7 @@ import 'package:colibreria/src/features/home/domain/domain.dart';
 part 'search_books_event.dart';
 part 'search_books_state.dart';
 
+/// Manages book search operations with debouncing, pagination and persisted search history
 class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
   final BooksUseCases _booksUseCases;
   final Debouncer _debouncer;
@@ -130,6 +131,7 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
     );
   }
 
+  /// Updates search history, keeping the most recent 5 queries
   List<String> _updateSearchHistory(String query) {
     final List<String> currentHistory = List<String>.from(state.searchHistory);
     if (query.trim().isEmpty) return currentHistory;
@@ -143,8 +145,8 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
 
     return currentHistory;
   }
-  // events dispatchers
 
+  // events dispatchers
   void searchBooks(String query) {
     _debouncer.run(() => add(SearchBooks(query: query)));
   }

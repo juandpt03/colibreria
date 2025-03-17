@@ -8,6 +8,7 @@ sealed class SearchBooksState extends Equatable {
   @override
   List<Object> get props => [searchHistory];
 
+  /// Maps the current state to a specific type using the functional programming style
   T map<T>({
     required T Function(SearchBooksLoading) loading,
     required T Function(SearchBooksSuccess) success,
@@ -54,6 +55,7 @@ final class SearchBooksSuccess extends SearchBooksState {
     this.isLoading = false,
   });
 
+  /// Creates a copy of the current state with updated values
   SearchBooksSuccess copyWith({
     BookSearchResult? searchResult,
     List<String>? searchHistory,

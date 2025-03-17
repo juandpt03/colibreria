@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'new_books_event.dart';
 part 'new_books_state.dart';
 
+/// Manages the state of new book releases
 class NewBooksBloc extends Bloc<NewBooksEvent, NewBooksState> {
   final BooksUseCases _booksUseCases;
 
@@ -15,10 +16,13 @@ class NewBooksBloc extends Bloc<NewBooksEvent, NewBooksState> {
     _eventHandlers();
     fetchNewBooks();
   }
+
+  /// Initializes the event handlers for the bloc
   void _eventHandlers() {
     on<FetchNewBooks>(_onFetchNewBooks);
   }
 
+  /// Handles the FetchNewBooks event
   Future<void> _onFetchNewBooks(
     FetchNewBooks event,
     Emitter<NewBooksState> emit,
@@ -33,5 +37,6 @@ class NewBooksBloc extends Bloc<NewBooksEvent, NewBooksState> {
     );
   }
 
+  /// dispatches the FetchNewBooks event to fetch new books
   void fetchNewBooks() => add(FetchNewBooks());
 }

@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'book_detail_event.dart';
 part 'book_detail_state.dart';
 
+//fetch book details
 class BookDetailBloc extends Bloc<BookDetailEvent, BookDetailState> {
   final BooksUseCases _booksUseCases;
 
@@ -14,10 +15,13 @@ class BookDetailBloc extends Bloc<BookDetailEvent, BookDetailState> {
       super(BookLoading()) {
     _eventHandlers();
   }
+
+  /// Initializes the event handlers for the bloc
   void _eventHandlers() {
     on<FetchBookDetail>(_onFetchBookDetail);
   }
 
+  /// Handles the FetchBookDetail event
   Future<void> _onFetchBookDetail(
     FetchBookDetail event,
     Emitter<BookDetailState> emit,
@@ -32,5 +36,6 @@ class BookDetailBloc extends Bloc<BookDetailEvent, BookDetailState> {
     );
   }
 
+  /// Dispatches the FetchBookDetail event to fetch book details
   void fetchBookDetail(String isbn13) => add(FetchBookDetail(isbn13: isbn13));
 }

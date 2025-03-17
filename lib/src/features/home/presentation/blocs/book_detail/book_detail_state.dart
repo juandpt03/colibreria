@@ -6,6 +6,7 @@ sealed class BookDetailState extends Equatable {
   @override
   List<Object> get props => [];
 
+  /// Maps the current state to a specific type using the functional programming style
   T map<T>({
     required T Function(BookLoading) loading,
     required T Function(BookSuccess) success,
@@ -39,6 +40,7 @@ final class BookError extends BookDetailState {
   List<Object> get props => [error];
 }
 
+/// Extension to get the book from the state
 extension BookDetailStateX on BookDetailState {
   BookDetail? get book => switch (this) {
     BookSuccess() => (this as BookSuccess).book,

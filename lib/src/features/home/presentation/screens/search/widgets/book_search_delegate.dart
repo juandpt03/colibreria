@@ -4,8 +4,11 @@ import 'package:colibreria/src/features/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Manages search UI and handles interaction between search interface and SearchBooksBloc
 class BookSearchDelegate extends SearchDelegate {
   final SearchBooksBloc searchBloc;
+
+  /// Tracks last query to prevent redundant searches
   String? _lastSearchedQuery;
 
   BookSearchDelegate({required this.searchBloc});
@@ -36,6 +39,7 @@ class BookSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
+    // Only trigger search if query is new
     if (query.isNotEmpty && query != _lastSearchedQuery) {
       _lastSearchedQuery = query;
       searchBloc.searchBooks(query);
@@ -61,6 +65,7 @@ class BookSearchDelegate extends SearchDelegate {
   }
 }
 
+/// widget that displays search results or history based on current state
 class _SearchContent extends StatelessWidget {
   final SearchBooksBloc searchBloc;
   final String query;
