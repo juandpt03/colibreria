@@ -23,6 +23,7 @@ class AppIcons {
   String get image => ImageManager.path('icons/image.svg');
   String get avatar => ImageManager.path('icons/avatar.svg');
   String get visibility => ImageManager.path('icons/visibility.svg');
+  String get search => ImageManager.path('icons/search.svg');
 }
 
 class Illustrations {
