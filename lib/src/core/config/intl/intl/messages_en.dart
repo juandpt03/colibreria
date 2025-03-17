@@ -22,15 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "all": MessageLookupByLibrary.simpleMessage("All"),
     "anUnknownErrorOccurred": MessageLookupByLibrary.simpleMessage(
       "An unknown error occurred",
     ),
+    "biography": MessageLookupByLibrary.simpleMessage("Biography"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "found": MessageLookupByLibrary.simpleMessage("Found"),
+    "horror": MessageLookupByLibrary.simpleMessage("Horror"),
     "isbnNotAvailable": MessageLookupByLibrary.simpleMessage(
       "ISBN not available",
     ),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+    "newBooks": MessageLookupByLibrary.simpleMessage("New Books"),
+    "noBooksFound": MessageLookupByLibrary.simpleMessage("No books found"),
     "noBooksFoundFor": MessageLookupByLibrary.simpleMessage(
       "No books found for",
     ),
@@ -50,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resultsFor": MessageLookupByLibrary.simpleMessage("results for"),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "travel": MessageLookupByLibrary.simpleMessage("Travel"),
     "unexpectedNullValue": MessageLookupByLibrary.simpleMessage(
       "Unexpected null value",
     ),

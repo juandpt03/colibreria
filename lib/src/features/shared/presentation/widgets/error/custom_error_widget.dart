@@ -1,20 +1,25 @@
 import 'package:colibreria/src/core/core.dart';
-import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchErrorView extends StatelessWidget {
+class CustomErrorWidget extends StatelessWidget {
   final AppException error;
-  final String query;
+  final String? buttonText;
+  final VoidCallback? onRetry;
+  final bool showRetryButton;
 
-  const SearchErrorView({super.key, required this.error, required this.query});
+  const CustomErrorWidget({
+    super.key,
+    required this.error,
+    this.buttonText,
+    this.onRetry,
+    this.showRetryButton = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     final textStyle = Theme.of(context).textTheme;
-    final searchBloc = context.read<SearchBooksBloc>();
 
     return Center(
       child: Padding(
@@ -33,12 +38,13 @@ class SearchErrorView extends StatelessWidget {
               style: textStyle.titleMedium,
               textAlign: TextAlign.center,
             ),
-            const GapY.medium(),
-            ElevatedButton(
-              onPressed:
-                  query.isNotEmpty ? () => searchBloc.searchBooks(query) : null,
-              child: Text(AppLocalizations.of(context).retry),
-            ),
+            if (showRetryButton) ...[
+              const GapY.medium(),
+              ElevatedButton(
+                onPressed: onRetry,
+                child: Text(buttonText ?? AppLocalizations.of(context).retry),
+              ),
+            ],
           ],
         ),
       ),

@@ -8,6 +8,10 @@ class AppTheme {
 
   ThemeData _buildTheme(ColorScheme colorScheme, TextTheme textTheme) {
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        scrolledUnderElevation: 0,
+        backgroundColor: colorScheme.surface,
+      ),
       colorScheme: colorScheme,
       textTheme: textTheme,
       elevatedButtonTheme: ElevatedButtonThemeData(

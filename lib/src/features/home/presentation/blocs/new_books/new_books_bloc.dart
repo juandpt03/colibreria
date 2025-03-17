@@ -12,8 +12,8 @@ class NewBooksBloc extends Bloc<NewBooksEvent, NewBooksState> {
   NewBooksBloc({required BooksUseCases booksUseCases})
     : _booksUseCases = booksUseCases,
       super(NewBooksLoading()) {
-    fetchNewBooks();
     _handlers();
+    fetchNewBooks();
   }
   void _handlers() {
     on<FetchNewBooks>(_onFetchNewBooks);

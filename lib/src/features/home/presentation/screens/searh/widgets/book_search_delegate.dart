@@ -81,7 +81,11 @@ class _SearchContent extends StatelessWidget {
                 query: query,
                 onSearchSelected: onSearchSelected,
               ),
-          error: (state) => SearchErrorView(error: state.error, query: query),
+          error:
+              (state) => CustomErrorWidget(
+                error: state.error,
+                onRetry: () => searchBloc.searchBooks(query),
+              ),
         );
       },
     );

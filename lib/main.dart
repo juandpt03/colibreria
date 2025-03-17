@@ -1,9 +1,11 @@
-import 'package:colibreria/src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:colibreria/src/core/core.dart';
 import 'package:colibreria/src/features/shared/shared.dart';
+
+import 'src/features/home/presentation/blocs/search_books/search_books_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,10 +15,13 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider<LanguageBloc>(create: (context) => LanguageBloc()),
+
         BlocProvider<SearchBooksBloc>(
           create:
-              (context) =>
-                  SearchBooksBloc(booksUseCases: DI.sl(), debouncer: DI.sl()),
+              (context) => SearchBooksBloc(
+                booksUseCases: DI.sl.get(),
+                debouncer: DI.sl.get(),
+              ),
         ),
       ],
       child: MultiObserver(
@@ -43,7 +48,7 @@ class MainApp extends StatelessWidget {
       ],
       locale: locale,
       supportedLocales: AppLocalizations.delegate.supportedLocales,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       theme: DI.sl<AppTheme>().lightTheme,
       darkTheme: DI.sl<AppTheme>().darkTheme,
     );

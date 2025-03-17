@@ -174,6 +174,41 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `No books found`
+  String get noBooksFound {
+    return Intl.message(
+      'No books found',
+      name: 'noBooksFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Books`
+  String get newBooks {
+    return Intl.message('New Books', name: 'newBooks', desc: '', args: []);
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
+  }
+
+  /// `Travel`
+  String get travel {
+    return Intl.message('Travel', name: 'travel', desc: '', args: []);
+  }
+
+  /// `Biography`
+  String get biography {
+    return Intl.message('Biography', name: 'biography', desc: '', args: []);
+  }
+
+  /// `Horror`
+  String get horror {
+    return Intl.message('Horror', name: 'horror', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -13,5 +13,11 @@
   "recentSearch": "Recent Search",
   "found": "Found",
   "resultsFor": "results for",
-  "noRecentSearches": "No recent searches"
+  "noRecentSearches": "No recent searches",
+  "noBooksFound": "No books found",
+  "newBooks": "New Books",
+  "all": "All",
+  "travel": "Travel",
+  "biography": "Biography",
+  "horror": "Horror"
 }
