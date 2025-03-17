@@ -294,6 +294,26 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Error opening the URL:`
+  String get errorOpeningTheUrl {
+    return Intl.message(
+      'Error opening the URL:',
+      name: 'errorOpeningTheUrl',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not open the URL:`
+  String get couldNotOpenTheUrl {
+    return Intl.message(
+      'Could not open the URL:',
+      name: 'couldNotOpenTheUrl',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

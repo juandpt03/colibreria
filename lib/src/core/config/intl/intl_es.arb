@@ -33,5 +33,7 @@
   "description": "Descripción",
   "chapter": "Capítulo",
   "noChaptersAvailableForThisBook": "No hay capítulos disponibles para este libro",
-  "bookDetails": "Detalles del libro"
+  "bookDetails": "Detalles del libro",
+  "errorOpeningTheUrl": "Error al abrir la URL:",
+  "couldNotOpenTheUrl": "No se pudo abrir la URL:"
 }

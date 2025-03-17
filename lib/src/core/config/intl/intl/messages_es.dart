@@ -32,8 +32,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "buyNow": MessageLookupByLibrary.simpleMessage("Comprar ahora"),
     "chapter": MessageLookupByLibrary.simpleMessage("Capítulo"),
     "chapters": MessageLookupByLibrary.simpleMessage("Capítulos"),
+    "couldNotOpenTheUrl": MessageLookupByLibrary.simpleMessage(
+      "No se pudo abrir la URL:",
+    ),
     "description": MessageLookupByLibrary.simpleMessage("Descripción"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "errorOpeningTheUrl": MessageLookupByLibrary.simpleMessage(
+      "Error al abrir la URL:",
+    ),
     "found": MessageLookupByLibrary.simpleMessage("Encontrados"),
     "horror": MessageLookupByLibrary.simpleMessage("Terror"),
     "isbn13": MessageLookupByLibrary.simpleMessage("ISBN-13"),
