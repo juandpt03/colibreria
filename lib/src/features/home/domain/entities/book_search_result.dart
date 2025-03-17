@@ -15,6 +15,9 @@ class BookSearchResult extends Equatable {
   @override
   List<Object?> get props => [total, page, books];
 
+  factory BookSearchResult.empty() =>
+      const BookSearchResult(total: 0, page: 1, books: []);
+
   BookSearchResult copyWith({int? total, int? page, List<Book>? books}) {
     return BookSearchResult(
       total: total ?? this.total,

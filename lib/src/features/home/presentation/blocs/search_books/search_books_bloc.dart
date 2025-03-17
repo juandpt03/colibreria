@@ -16,7 +16,7 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
     required Debouncer debouncer,
   }) : _booksUseCases = booksUseCases,
        _debouncer = debouncer,
-       super(SearchBooksLoading()) {
+       super(SearchBooksSuccess(searchResult: BookSearchResult.empty())) {
     _eventHandlers();
   }
   //Handlers for events
@@ -131,7 +131,7 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
   }
 
   List<String> _updateSearchHistory(String query) {
-    final List<String> currentHistory = state.searchHistory;
+    final List<String> currentHistory = List<String>.from(state.searchHistory);
     if (query.trim().isEmpty) return currentHistory;
 
     currentHistory.remove(query);
@@ -143,7 +143,6 @@ class SearchBooksBloc extends HydratedBloc<SearchBooksEvent, SearchBooksState> {
 
     return currentHistory;
   }
-
   // events dispatchers
 
   void searchBooks(String query) {
