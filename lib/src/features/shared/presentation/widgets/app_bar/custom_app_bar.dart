@@ -6,12 +6,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final List<Widget> actions;
   final bool showLeading;
+  final Widget? leading;
 
   const CustomAppBar({
     super.key,
     this.title = '',
     this.actions = const [],
     this.showLeading = true,
+    this.leading,
   });
 
   @override
@@ -28,25 +30,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       leading:
           showLeading
-              ? Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTap: () => context.pop(),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: colors.surface,
-                      shape: BoxShape.circle,
-                      border: Border.all(color: colors.primary.withAlpha(51)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: ImageManager.icons.backArrow.toSvg(
-                        color: colors.onSurface,
+              ? leading ??
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () => context.pop(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: colors.surface,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: colors.primary.withAlpha(51),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: ImageManager.icons.backArrow.toSvg(
+                            color: colors.onSurface,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              )
+                  )
               : null,
       actions: actions,
     );

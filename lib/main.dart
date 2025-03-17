@@ -15,6 +15,7 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider<LanguageBloc>(create: (context) => LanguageBloc()),
+        BlocProvider<ThemeBloc>(create: (context) => ThemeBloc()),
 
         BlocProvider<SearchBooksBloc>(
           create:
@@ -38,6 +39,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = context.watch<LanguageBloc>().state;
+    final themeMode = context.watch<ThemeBloc>().state.themeMode;
     return MaterialApp.router(
       routerConfig: DI.sl<AppRouter>().router,
       localizationsDelegates: [
@@ -48,7 +50,7 @@ class MainApp extends StatelessWidget {
       ],
       locale: locale,
       supportedLocales: AppLocalizations.delegate.supportedLocales,
-      themeMode: ThemeMode.dark,
+      themeMode: themeMode,
       theme: DI.sl<AppTheme>().lightTheme,
       darkTheme: DI.sl<AppTheme>().darkTheme,
     );

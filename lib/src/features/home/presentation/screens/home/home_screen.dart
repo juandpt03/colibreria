@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return MultiBlocProvider(
       providers: [
         BlocProvider<NewBooksBloc>(
@@ -22,8 +23,11 @@ class HomeScreen extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: CustomAppBar(
+          leading: IconButton(
+            icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode),
+            onPressed: () => context.read<ThemeBloc>().toggleTheme(),
+          ),
           title: AppLocalizations.of(context).newBooks,
-          showLeading: false,
           actions: [
             IconButton(
               icon: ImageManager.icons.search.toSvg(color: colors.onSurface),
